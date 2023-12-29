@@ -1,95 +1,285 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import styles from "./page.module.css";
+import { Fragment } from "react";
+import "./globals.css";
+import { Link } from "react-scroll";
+import mainImage from "../public/images/main-image.jpg";
+import aboutImage from "../public/images/about-image.jpg";
+import item1 from "../public/images/item/item1.jpg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import store1 from "../public/images/store-image/store-image1.jpg";
+import store2 from "../public/images/store-image/store-image2.jpg";
+import store3 from "../public/images/store-image/store-image3.jpg";
 
 export default function Home() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 3,
+    // autoplay: true,
+    speed: 500,
+    autoplaySpeed: 2000,
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Fragment>
+      <main className={styles.container}>
+        <div className={styles.main_image_wrapper}>
+          <section className={styles.main_text_wrapper}>
+            <h1 className={styles.main_text_title}>바쁘니까, 더 맛있게</h1>
+            <h2 className={styles.main_text_description}>
+              시간과 맛 어느 하나도 포기할 수 없는 현대인을 위한 치킨을
+              만듭니다.
+            </h2>
+          </section>
+
+          {/* <div className={styles.image_gradient}></div> */}
+          <Image
+            className={styles.main_image}
+            src={mainImage}
+            fill={true}
+            alt="메인이미지"
+          />
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className={styles.about_container}>
+          <div className={styles.about_wrapper}>
+            <div className={styles.about_left_wrapper}>
+              <h2 className={styles.about_title}>
+                매일매일 신선한 <span style={{ color: "#ebb403" }}>기름</span>을
+                씁니다
+              </h2>
+              <p className={styles.about_description}>
+                2013년 '깨끗한 기름'이라는 신념으로 창업한 참치킨은 선도적인
+                <br />
+                치킨 회사로서 고객을 위한 상품 및 서비스의 질적 향상을 목표로
+                최선을 다하고 있습니다. 고객의 다양한 눈높이에 맞추고자 항상
+                감사한 마음과 정성을 다하는 자세로 좋은 제품을 만들고 있습니다.
+              </p>
+            </div>
+            <div className={styles.about_right_wrapper}>
+              <Image
+                className={styles.about_image}
+                src={aboutImage}
+                fill={true}
+                alt="소개이미지"
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.scroll_text_wrapper}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 72">
+            <text className={styles.scroll_text_start} x="0" y="30">
+              chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;
+            </text>
+            <text className={styles.scroll_text_end} x="0" y="30">
+              chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;chicken&nbsp;&nbsp;
+            </text>
+          </svg>
+        </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <div className={styles.menu_container}>
+          <div className={styles.menu_wrapper}>
+            <div className={styles.menu_left_wrapper}>
+              <h2 className={styles.menu_text_title}>추천 메뉴</h2>
+              <nav>
+                <ol>
+                  <li className={styles.menu_text_detail}>
+                    <Link to="2-1">피자&치킨</Link>
+                  </li>
+                  <li className={styles.menu_text_detail}>
+                    <Link to="2-2">사이드메뉴</Link>
+                  </li>
+                  <li className={styles.menu_text_detail}>
+                    <Link to="2-3">소스</Link>
+                  </li>
+                  <li className={styles.menu_text_detail}>
+                    <Link to="2-4">음료&주류</Link>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div className={styles.menu_right_wrapper}>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item1}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>후라이드</p>
+                <p className={styles.item_price}>18,000원</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <div className={styles.store_container}>
+          <div className={styles.store_wrapper}>
+            <div className={styles.store_text_wrapper}>
+              <h2 className={styles.store_text_title}>주방 사진</h2>
+              <p className={styles.store_text_description}>
+                청결을 1순위로 생각하기 때문에, 항상 깨끗한 주방을 유지하기 위해
+                노력합니다.
+              </p>
+            </div>
+          </div>
+          <div className={styles.store_item_wrapper}>
+            <Slider {...settings}>
+              <div className={styles.store_item_image_wrapper}>
+                <Image
+                  className={styles.store_item_image}
+                  src={store1}
+                  fill={true}
+                  alt="주방1"
+                />
+              </div>
+              <div className={styles.store_item_image_wrapper}>
+                <Image
+                  className={styles.store_item_image}
+                  src={store2}
+                  fill={true}
+                  alt="주방2"
+                />
+              </div>
+              <div className={styles.store_item_image_wrapper}>
+                <Image
+                  className={styles.store_item_image}
+                  src={store3}
+                  fill={true}
+                  alt="주방3"
+                />
+              </div>
+              <div className={styles.store_item_image_wrapper}>
+                <Image
+                  className={styles.store_item_image}
+                  src={store1}
+                  fill={true}
+                  alt="주방1"
+                />
+              </div>
+              <div className={styles.store_item_image_wrapper}>
+                <Image
+                  className={styles.store_item_image}
+                  src={store2}
+                  fill={true}
+                  alt="주방2"
+                />
+              </div>
+              <div className={styles.store_item_image_wrapper}>
+                <Image
+                  className={styles.store_item_image}
+                  src={store3}
+                  fill={true}
+                  alt="주방3"
+                />
+              </div>
+            </Slider>
+          </div>
+        </div>
+      </main>
+    </Fragment>
+  );
 }

@@ -8,11 +8,16 @@ import mainImage from "../public/images/main-image.jpg";
 import aboutImage from "../public/images/about-image.jpg";
 import item1 from "../public/images/item/item1.jpg";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "./slick.css";
+import "./slick-theme.css";
 import store1 from "../public/images/store-image/store-image1.jpg";
 import store2 from "../public/images/store-image/store-image2.jpg";
 import store3 from "../public/images/store-image/store-image3.jpg";
+import banner from "../public/images/banner/banner.jpg";
+import Script from "next/script";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Home() {
   const settings = {
@@ -20,13 +25,17 @@ export default function Home() {
     centerMode: true,
     infinite: true,
     slidesToShow: 3,
-    // autoplay: true,
+    autoplay: true,
     speed: 500,
     autoplaySpeed: 2000,
   };
 
   return (
     <Fragment>
+      <Script
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=040c5bb116750422de3452e081e62cb1&libraries=services,clusterer&autoload=false"
+        strategy="beforeInteractive"
+      />
       <main className={styles.container}>
         <div className={styles.main_image_wrapper}>
           <section className={styles.main_text_wrapper}>
@@ -279,6 +288,70 @@ export default function Home() {
             </Slider>
           </div>
         </div>
+
+        <div className={styles.location_inquire_container}>
+          <div className={styles.map_container}>
+            <div className={styles.location_detail_container}>
+              <div className={styles.location_detail_wrapper}>
+                <h2 className={styles.location_title_text}>오시는 길</h2>
+                <p className={styles.location_detail_text}>
+                  <FaLocationDot />
+                  &nbsp;&nbsp;&nbsp; 인천광역시 부평구 부평1동 대림아파트
+                </p>
+                <p className={styles.phone_detail_text}>
+                  <FaPhoneAlt />
+                  &nbsp;&nbsp;&nbsp; 010-8681-7883
+                </p>
+              </div>
+            </div>
+            <Map
+              center={{ lat: 37.580314, lng: 126.926204 }}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <MapMarker position={{ lat: 37.5803099, lng: 126.922669 }}>
+                <div style={{ color: "#000" }}>Hello World!</div>
+              </MapMarker>
+            </Map>
+          </div>
+        </div>
+
+        <section className={styles.reservation_container}>
+          <div className={styles.reservation_wrapper}>
+            <h3 className={styles.reservation_text}>문&nbsp;&nbsp;의</h3>
+            <div className={styles.reservation_form_wrapper}>
+              <div className={styles.input_wrapper_50}>
+                <p className={styles.input_name}>성함</p>
+                <input className={styles.name_input_form} type="text"></input>
+              </div>
+              <div className={styles.input_wrapper_50}>
+                <p className={styles.input_phone}>전화번호</p>
+                <input className={styles.phone_input_form} type="text"></input>
+              </div>
+              <div className={styles.input_wrapper_100}>
+                <p className={styles.input_ask}>문의사항</p>
+                <textarea className={styles.ask_input_form}></textarea>
+              </div>
+            </div>
+            <input
+              className={styles.reservation_submit}
+              type="submit"
+              value="문의"
+            ></input>
+          </div>
+        </section>
+
+        <footer className={styles.footer_container}>
+          <div className={styles.footer_wrapper}>
+            <div className={styles.logo_wrapper}>
+              <Image />
+            </div>
+          </div>
+          <p>
+            대표이사: 홍길동|주소: 인천광역시 부평구 부평1동|대표전화:
+            010-1234-5678
+          </p>
+          <p>Copyright Ⓒ 2023</p>
+        </footer>
       </main>
     </Fragment>
   );

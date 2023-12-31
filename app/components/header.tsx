@@ -42,7 +42,7 @@ export default function Header() {
               </li>
               <li>
                 <Link to="5" spy={true} smooth={true}>
-                  예약
+                  문의
                 </Link>
               </li>
             </ol>

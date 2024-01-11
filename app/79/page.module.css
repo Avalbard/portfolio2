@@ -1,0 +1,56 @@
+.container {
+  width: 100%;
+}
+.main_container {
+  width: 100%;
+  height: 100vh;
+  background: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@font-face {
+  font-family: Kenfolg;
+  src: url("../../public/fonts/11/Kenfolg.otf");
+}
+@font-face {
+  font-family: GmarketSansTTFLight;
+  src: url("../../public/fonts/2/GmarketSansTTFMedium.ttf");
+}
+.main_wrapper {
+  width: calc(100% - 180px);
+  height: 100%;
+  background: skyblue;
+}
+.header_container {
+  width: 100%;
+  height: 100px;
+  background: peru;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo_wrapper {
+  position: relative;
+  width: 150px;
+  height: 50px;
+}
+.ol_style {
+  display: flex;
+  flex-direction: row;
+}
+.ol_style li {
+  font-family: "GmarketSansTTFLight";
+  font-size: 18px;
+  padding: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.landing_container {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 150px);
+  background: firebrick;
+}

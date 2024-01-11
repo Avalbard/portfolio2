@@ -1,32 +1,37 @@
+@font-face {
+  font-family: libre-bodoni-regular;
+  src: url("../../public/fonts/79/libre-bodoni.regular.ttf");
+}
+@font-face {
+  font-family: Yznaj;
+  src: url("../../public/fonts/79/AhganiryaPersonalUse-Yznaj.ttf");
+}
+@font-face {
+  font-family: GmarketSansTTFMedium;
+  src: url("../../public/fonts/2/GmarketSansTTFMedium.ttf");
+}
+@font-face {
+  font-family: GmarketSansTTFLight;
+  src: url("../../public/fonts/2/GmarketSansTTFLight.ttf");
+}
 .container {
   width: 100%;
 }
 .main_container {
   width: 100%;
   height: 100vh;
-  background: beige;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-@font-face {
-  font-family: Kenfolg;
-  src: url("../../public/fonts/11/Kenfolg.otf");
-}
-@font-face {
-  font-family: GmarketSansTTFLight;
-  src: url("../../public/fonts/2/GmarketSansTTFMedium.ttf");
-}
 .main_wrapper {
   width: calc(100% - 180px);
   height: 100%;
-  background: skyblue;
 }
 .header_container {
   width: 100%;
   height: 100px;
-  background: peru;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -42,7 +47,7 @@
   flex-direction: row;
 }
 .ol_style li {
-  font-family: "GmarketSansTTFLight";
+  font-family: "GmarketSansTTFMedium";
   font-size: 18px;
   padding: 20px;
   margin-left: 20px;
@@ -52,5 +57,256 @@
   position: relative;
   width: 100%;
   height: calc(100% - 150px);
-  background: firebrick;
+  background: #e6e6e6;
+}
+.landing_wrapper_left {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.landing_text_wrapper {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+}
+.landing_text_wrapper h1 {
+  font-family: "libre-bodoni-regular";
+  font-size: 70px;
+  letter-spacing: 3px;
+}
+.landing_text_wrapper h2 {
+  font-family: "GmarketSansTTFLight";
+  color: #a0a0a0;
+  font-size: 18px;
+}
+.landing_text_wrapper button {
+  border: none;
+  font-family: "GmarketSansTTFMedium";
+  color: black;
+  padding: 16px 28px;
+  cursor: pointer;
+  margin-top: 30px;
+  background: white;
+}
+.landing_text_wrapper button:hover {
+  color: white;
+  background-color: black;
+}
+.landing_image_behind_circle {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  bottom: 10%;
+}
+.image_wrapper {
+  position: absolute;
+  width: 533px;
+  height: 800px;
+  bottom: 0;
+  right: 10%;
+}
+
+.clothing_type_container {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.clothing_type_wrapper {
+  position: relative;
+  /* width: 1200px; */
+  width: 100%;
+  min-width: 2000px;
+  height: 500px;
+}
+.casual_clothing_wrapper {
+  position: absolute;
+  right: 31%;
+}
+.daily_clothing_wrapper {
+  position: absolute;
+  left: 31%;
+  top: 12%;
+}
+.casual_clothing_image_wrapper {
+  position: relative;
+  width: 400px;
+  height: 600px;
+}
+.daily_clothing_image_wrapper {
+  position: relative;
+  width: 400px;
+  height: 491px;
+}
+.daily_clothing_info_wrapper {
+  position: absolute;
+  border: none;
+  border-top: 2px solid #b6b6b6;
+  width: 340px;
+  height: 300px;
+  z-index: 2;
+  display: flex;
+  left: -64%;
+  top: 30%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.daily_clothing_info_text_wrapper {
+  margin-top: 30px;
+  text-align: left;
+}
+.daily_clothing_info_text_wrapper h2 {
+  font-family: "libre-bodoni-regular";
+  font-size: 30px;
+}
+.daily_clothing_info_text_wrapper h3 {
+  color: #adadad;
+  font-family: "GmarketSansTTFMedium";
+  font-size: 16px;
+}
+.daily_clothing_info_text_wrapper button {
+  border: none;
+  font-family: "GmarketSansTTFMedium";
+  color: white;
+  padding: 16px 28px;
+  cursor: pointer;
+  margin-top: 25px;
+  background: black;
+}
+.daily_clothing_image_wrapper button:hover {
+  color: black;
+  background: white;
+  border: 1px solid black;
+}
+.casual_clothing_info_wrapper {
+  position: absolute;
+  border: none;
+  border-top: 2px solid #b6b6b6;
+  width: 340px;
+  height: 300px;
+  z-index: 2;
+  right: -64%;
+  top: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.casual_clothing_info_text_wrapper {
+  margin-top: 30px;
+  text-align: left;
+}
+.casual_clothing_info_text_wrapper h2 {
+  font-family: "libre-bodoni-regular";
+  font-size: 30px;
+}
+.casual_clothing_info_text_wrapper h3 {
+  color: #adadad;
+  font-family: "GmarketSansTTFMedium";
+  font-size: 16px;
+}
+.casual_clothing_info_text_wrapper button {
+  border: none;
+  font-family: "GmarketSansTTFMedium";
+  color: white;
+  padding: 16px 28px;
+  cursor: pointer;
+  margin-top: 25px;
+  background: black;
+}
+.casual_clothing_image_wrapper button:hover {
+  color: black;
+  background: white;
+  border: 1px solid black;
+}
+.today_clothing_container {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.today_clothing_wrapper {
+  /* width: calc(100% - 730px); */
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.today_image_wrapper {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.today_image {
+  object-fit: cover;
+}
+
+.today_text_wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.today_text_top {
+  width: 100%;
+  height: calc(100% - 180px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.today_text_top h2 {
+  font-family: "libre-bodoni-regular";
+  font-size: 30px;
+}
+.today_text_top h3 {
+  color: #a1a1a1;
+  font-family: "GmarketSansTTFMedium";
+  font-size: 16px;
+  margin-top: 6px;
+}
+.today_text_top button {
+  border: 1px solid black;
+  font-family: "GmarketSansTTFMedium";
+  color: white;
+  padding: 16px 28px;
+  cursor: pointer;
+  margin-top: 25px;
+  background: black;
+}
+.today_text_top button:hover {
+  border: 1px solid black;
+  background: white;
+  color: black;
+}
+.week_wrapper {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+}
+.span_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.week_wrapper span {
+  display: inline-block;
+  color: #a9a9a9;
+  font-family: "GmarketSansTTFMedium";
+  font-size: 16px;
+  margin-top: 6px;
+  padding: 5px 40px;
+  cursor: pointer;
 }

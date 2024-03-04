@@ -14,11 +14,20 @@ import Image2 from "../../public/images/79/dateImage/gbarkz-vqKnuG8GaQc-unsplash
 import Image3 from "../../public/images/79/dateImage/luobulinka-FO4mQZi1c0M-unsplash.jpg";
 import Image4 from "../../public/images/79/dateImage/oleg-ivanov-sg_gRhbYXhc-unsplash.jpg";
 import Image5 from "../../public/images/79/dateImage/pietra-schwarzler-lSLq_xQdFNI-unsplash.jpg";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Link } from "react-scroll";
 
 import { EventHandler, MouseEvent, useEffect, useState } from "react";
+import Script from "next/script";
 
 export default function Home() {
   const [image, setImage] = useState(Image1);
+
+  useEffect((): void => {
+    AOS.init();
+  }, []);
 
   const handleClick =
     (data: StaticImageData) => (event: MouseEvent<HTMLButtonElement>) => {
@@ -26,6 +35,10 @@ export default function Home() {
     };
   return (
     <>
+      <Script
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=040c5bb116750422de3452e081e62cb1&libraries=services,clusterer&autoload=false"
+        strategy="beforeInteractive"
+      />
       <main className={styles.container}>
         <section className={styles.main_container}>
           <div className={styles.main_wrapper}>
@@ -40,17 +53,56 @@ export default function Home() {
               </div>
               <nav>
                 <ol className={styles.ol_style}>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
+                  <Link
+                    style={{ zIndex: 30 }}
+                    duration={600}
+                    to="1"
+                    spy={true}
+                    smooth={true}
+                  >
+                    <li>1</li>
+                  </Link>
+                  <Link duration={600} to="2" spy={true} smooth={true}>
+                    <li>2</li>
+                  </Link>
+                  <Link duration={600} to="3" spy={true} smooth={true}>
+                    <li>3</li>
+                  </Link>
                 </ol>
               </nav>
             </header>
             <div className={styles.landing_container}>
               <div className={styles.landing_text_wrapper}>
-                <h1>New fashion</h1>
-                <h2>A new fashion revolution begins</h2>
-                <button>More detail</button>
+                <div
+                  data-aos="fade-right"
+                  data-aos-offset="200"
+                  data-aos-duration="400"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                  data-aos-delay="0"
+                >
+                  <h1>New fashion</h1>
+                </div>
+                <div
+                  data-aos="fade-right"
+                  data-aos-offset="200"
+                  data-aos-duration="400"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                  data-aos-delay="400"
+                >
+                  <h2>A new fashion revolution begins</h2>
+                </div>
+                <div
+                  data-aos="fade-right"
+                  data-aos-offset="200"
+                  data-aos-duration="400"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                  data-aos-delay="800"
+                >
+                  <button>More detail</button>
+                </div>
               </div>
 
               <div className={styles.image_wrapper}>
@@ -65,17 +117,45 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.clothing_type_container}>
+        <section id="1" className={styles.clothing_type_container}>
           <div className={styles.clothing_type_wrapper}>
             <div className={styles.casual_clothing_wrapper}>
               <div className={styles.casual_clothing_image_wrapper}>
                 <div className={styles.casual_clothing_info_wrapper}>
                   <div className={styles.casual_clothing_info_text_wrapper}>
-                    <h2>Casual</h2>
-                    <h3>Simple and trendy</h3>
-                    <button>More detail</button>
+                    <div
+                      data-aos="fade-left"
+                      data-aos-offset="200"
+                      data-aos-duration="400"
+                      data-aos-easing="ease-out"
+                      data-aos-once="true"
+                      data-aos-delay="0"
+                    >
+                      <h2>Casual</h2>
+                    </div>
+                    <div
+                      data-aos="fade-left"
+                      data-aos-offset="200"
+                      data-aos-duration="400"
+                      data-aos-easing="ease-out"
+                      data-aos-once="true"
+                      data-aos-delay="200"
+                    >
+                      <h3>Simple and trendy</h3>
+                    </div>
+                    <div
+                      data-aos="fade-left"
+                      data-aos-offset="200"
+                      data-aos-duration="400"
+                      data-aos-easing="ease-out"
+                      data-aos-once="true"
+                      data-aos-delay="400"
+                    >
+                      <button>More detail</button>
+                    </div>
                   </div>
                 </div>
+
                 <Image
                   className={styles.casual_clothing_image}
                   src={casualImage}
@@ -88,11 +168,39 @@ export default function Home() {
               <div className={styles.daily_clothing_image_wrapper}>
                 <div className={styles.daily_clothing_info_wrapper}>
                   <div className={styles.daily_clothing_info_text_wrapper}>
-                    <h2>Daily</h2>
-                    <h3>Easy and unassuming</h3>
-                    <button>More detail</button>
+                    <div
+                      data-aos="fade-right"
+                      data-aos-offset="200"
+                      data-aos-duration="400"
+                      data-aos-easing="ease-out"
+                      data-aos-once="true"
+                      data-aos-delay="0"
+                    >
+                      <h2>Daily</h2>
+                    </div>
+                    <div
+                      data-aos="fade-right"
+                      data-aos-offset="200"
+                      data-aos-duration="400"
+                      data-aos-easing="ease-out"
+                      data-aos-once="true"
+                      data-aos-delay="200"
+                    >
+                      <h3>Easy and unassuming</h3>
+                    </div>
+                    <div
+                      data-aos="fade-right"
+                      data-aos-offset="200"
+                      data-aos-duration="400"
+                      data-aos-easing="ease-out"
+                      data-aos-once="true"
+                      data-aos-delay="400"
+                    >
+                      <button>More detail</button>
+                    </div>
                   </div>
                 </div>
+
                 <Image
                   className={styles.daily_clothing_image}
                   src={dailyImage}
@@ -103,7 +211,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.today_clothing_container}>
+        <section id="2" className={styles.today_clothing_container}>
           <div className={styles.today_clothing_wrapper}>
             <div className={styles.today_image_wrapper}>
               <Image
@@ -116,9 +224,36 @@ export default function Home() {
             </div>
             <div className={styles.today_text_wrapper}>
               <div className={styles.today_text_top}>
-                <h2>Outfit of the Day</h2>
-                <h3>Your first thing in the morning</h3>
-                <button>More detail</button>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-duration="400"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                  data-aos-delay="0"
+                >
+                  <h2>Outfit of the Day</h2>
+                </div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-duration="400"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                  data-aos-delay="200"
+                >
+                  <h3>Your first thing in the morning</h3>
+                </div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-duration="400"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                  data-aos-delay="400"
+                >
+                  <button>More detail</button>
+                </div>
               </div>
               <div className={styles.week_wrapper}>
                 <div className={styles.span_wrapper}>
@@ -177,7 +312,73 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.address_container}></section>
+        <section id="3" className={styles.address_container}>
+          <div className={styles.address_wrapper}>
+            <div className={styles.address_wrapper_left}>
+              <Map
+                center={{ lat: 37.552998017, lng: 126.972548728 }}
+                style={{ width: "100%", height: "100%" }}
+              >
+                <MapMarker position={{ lat: 37.552987017, lng: 126.972591728 }}>
+                  <div
+                    style={{
+                      color: "#000",
+                      textAlign: "center",
+                    }}
+                  >
+                    Cloth
+                  </div>
+                </MapMarker>
+              </Map>
+            </div>
+            <div className={styles.address_wrapper_right}>
+              <div
+                data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-duration="400"
+                data-aos-easing="ease-out"
+                data-aos-once="true"
+                data-aos-delay="0"
+              >
+                <h2>010-1234-5678</h2>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-duration="400"
+                data-aos-easing="ease-out"
+                data-aos-once="true"
+                data-aos-delay="200"
+              >
+                <h3>서울 용산구 한강대로 405</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer className={styles.footer_container}>
+          <div className={styles.footer_wrapper}>
+            <span
+              onClick={() =>
+                (window.location.href = "http://www.instagram.com")
+              }
+            >
+              Instagram
+            </span>
+            <span
+              onClick={() => (window.location.href = "http://www.facebook.com")}
+            >
+              Facebook
+            </span>
+            <span onClick={() => (window.location.href = "http://www.x.com")}>
+              Twitter
+            </span>
+            <span
+              onClick={() => (window.location.href = "http://www.youtube.com")}
+            >
+              Youtube
+            </span>
+          </div>
+        </footer>
       </main>
     </>
   );

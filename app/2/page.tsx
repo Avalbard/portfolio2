@@ -6,6 +6,17 @@ import { Link } from "react-scroll";
 import mainImage from "../../public/images/2/main-image.jpg";
 import aboutImage from "../../public/images/2/about-image.jpg";
 import item1 from "../../public/images/2/item/item1.jpg";
+import item2 from "../../public/images/2/item/09.png";
+import item3 from "../../public/images/2/item/161b8772a6542.jpg";
+import item4 from "../../public/images/2/item/23325_detail_067.jpg";
+import item5 from "../../public/images/2/item/720X720.jpeg";
+import item6 from "../../public/images/2/item/CC0446_thumb_1.png";
+import item7 from "../../public/images/2/item/IMG_5627.jpeg";
+import item8 from "../../public/images/2/item/cd56a44cc34953697b3b019fd484ebed.jpg";
+import item9 from "../../public/images/2/item/ce1a9052ca01427fa857b17172b9390b1.jpg";
+import item10 from "../../public/images/2/item/img.jpg";
+import item11 from "../../public/images/2/item/31922_22741_3040.jpg";
+import item12 from "../../public/images/2/item/pngtree-white-sauce-mayonnaise-png-image_10016745.png";
 import Slider from "react-slick";
 import "./slick.css";
 import "./slick-theme.css";
@@ -13,12 +24,22 @@ import store1 from "../../public/images/2/store-image/store-image1.jpg";
 import store2 from "../../public/images/2/store-image/store-image2.jpg";
 import store3 from "../../public/images/2/store-image/store-image3.jpg";
 import banner from "../../public/images/2/main-banner/banner.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Script from "next/script";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init();
+  });
+
   const settings = {
     className: "center",
     centerMode: true,
@@ -38,11 +59,19 @@ export default function Home() {
       <main className={styles.container}>
         <div className={styles.main_image_wrapper}>
           <section className={styles.main_text_wrapper}>
-            <h1 className={styles.main_text_title}>바쁘니까, 더 맛있게</h1>
-            <h2 className={styles.main_text_description}>
-              시간과 맛 어느 하나도 포기할 수 없는 현대인을 위한 치킨을
-              만듭니다.
-            </h2>
+            <div
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-duration="500"
+              data-aos-easing="ease"
+              data-aos-once="true"
+            >
+              <h1 className={styles.main_text_title}>바쁘니까, 더 맛있게</h1>
+              <h2 className={styles.main_text_description}>
+                시간과 맛 어느 하나도 포기할 수 없는 현대인을 위한 치킨을
+                만듭니다.
+              </h2>
+            </div>
           </section>
 
           {/* <div className={styles.image_gradient}></div> */}
@@ -54,21 +83,38 @@ export default function Home() {
           />
         </div>
 
-        <div className={styles.about_container}>
+        <div id="1" className={styles.about_container}>
           <div className={styles.about_wrapper}>
             <div className={styles.about_left_wrapper}>
-              <h2 className={styles.about_title}>
-                매일매일 신선한 <span style={{ color: "#ebb403" }}>기름</span>을
-                씁니다
-              </h2>
-              <p className={styles.about_description}>
-                2013년 '깨끗한 기름'이라는 신념으로 창업한 참치킨은 선도적인
-                <br />
-                치킨 회사로서 고객을 위한 상품 및 서비스의 질적 향상을 목표로
-                최선을 다하고 있습니다. 고객의 다양한 눈높이에 맞추고자 항상
-                감사한 마음과 정성을 다하는 자세로 좋은 제품을 만들고 있습니다.
-              </p>
+              <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-duration="500"
+                data-aos-easing="ease-out-back"
+                data-aos-once="true"
+              >
+                <h2 className={styles.about_title}>
+                  매일매일 신선한 <span style={{ color: "#ebb403" }}>기름</span>
+                  을 씁니다
+                </h2>
+              </div>
+              <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-duration="600"
+                data-aos-easing="ease-out-back"
+                data-aos-once="true"
+              >
+                <p className={styles.about_description}>
+                  당신의 입맛을 위한 건강한 선택! 저희 치킨집은 신선하고 깨끗한
+                  기름을 사용하여 고객님들에게 건강한 맛을 제공하며, 철저한 품질
+                  관리와 특별한 비법으로 맛과 건강을 동시에 책임지며, 건강한
+                  다이닝을 추구하는 고객들을 위해 최상의 식재료와 깨끗한
+                  기름으로 최고의 맛과 건강을 약속합니다.
+                </p>
+              </div>
             </div>
+
             <div className={styles.about_right_wrapper}>
               <Image
                 className={styles.about_image}
@@ -90,27 +136,44 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className={styles.menu_container}>
+        <div id="2" className={styles.menu_container}>
           <div className={styles.menu_wrapper}>
             <div className={styles.menu_left_wrapper}>
-              <h2 className={styles.menu_text_title}>추천 메뉴</h2>
-              <nav>
-                <ol>
-                  <li className={styles.menu_text_detail}>
-                    <Link to="2-1">피자&치킨</Link>
-                  </li>
-                  <li className={styles.menu_text_detail}>
-                    <Link to="2-2">사이드메뉴</Link>
-                  </li>
-                  <li className={styles.menu_text_detail}>
-                    <Link to="2-3">소스</Link>
-                  </li>
-                  <li className={styles.menu_text_detail}>
-                    <Link to="2-4">음료&주류</Link>
-                  </li>
-                </ol>
-              </nav>
+              <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-duration="500"
+                data-aos-easing="ease-out-back"
+                data-aos-once="true"
+              >
+                <h2 className={styles.menu_text_title}>추천 메뉴</h2>
+              </div>
+              <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-duration="700"
+                data-aos-easing="ease-out-back"
+                data-aos-once="true"
+              >
+                <nav>
+                  <ol>
+                    <li className={styles.menu_text_detail}>
+                      <Link to="2-1">피자&치킨</Link>
+                    </li>
+                    <li className={styles.menu_text_detail}>
+                      <Link to="2-2">사이드메뉴</Link>
+                    </li>
+                    <li className={styles.menu_text_detail}>
+                      <Link to="2-3">소스</Link>
+                    </li>
+                    <li className={styles.menu_text_detail}>
+                      <Link to="2-4">음료&주류</Link>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
             </div>
+
             <div className={styles.menu_right_wrapper}>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
@@ -128,110 +191,154 @@ export default function Home() {
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item2}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>양념치킨</p>
+                <p className={styles.item_price}>19,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item3}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>간장치킨</p>
+                <p className={styles.item_price}>19,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item4}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>치즈볼</p>
+                <p className={styles.item_price}>6,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item10}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>양념감자</p>
+                <p className={styles.item_price}>4,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item9}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>소떡소떡</p>
+                <p className={styles.item_price}>6,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item7}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>양념 소스</p>
+                <p className={styles.item_price}>2,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item8}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>머스타드 소스</p>
+                <p className={styles.item_price}>2,000원</p>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.item_image_wrapper}>
                   <Image
                     className={styles.item_image}
-                    src={item1}
+                    src={item12}
                     fill={true}
                     alt="치킨1"
                   />
                 </div>
-                <p className={styles.item_name}>후라이드</p>
-                <p className={styles.item_price}>18,000원</p>
+                <p className={styles.item_name}>마요네즈</p>
+                <p className={styles.item_price}>2,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item6}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>콜라</p>
+                <p className={styles.item_price}>3,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item5}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>사이다</p>
+                <p className={styles.item_price}>3,000원</p>
+              </div>
+              <div className={styles.item_wrapper}>
+                <div className={styles.item_image_wrapper}>
+                  <Image
+                    className={styles.item_image}
+                    src={item11}
+                    fill={true}
+                    alt="치킨1"
+                  />
+                </div>
+                <p className={styles.item_name}>맥주</p>
+                <p className={styles.item_price}>4,000원</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className={styles.store_container}>
+        <div id="3" className={styles.store_container}>
           <div className={styles.store_wrapper}>
-            <div className={styles.store_text_wrapper}>
-              <h2 className={styles.store_text_title}>주방 사진</h2>
-              <p className={styles.store_text_description}>
-                청결을 1순위로 생각하기 때문에, 항상 깨끗한 주방을 유지하기 위해
-                노력합니다.
-              </p>
+            <div
+              data-aos="fade-up"
+              data-aos-offset="300"
+              data-aos-duration="600"
+              data-aos-easing="ease-out-back"
+              data-aos-once="true"
+            >
+              <div className={styles.store_text_wrapper}>
+                <h2 className={styles.store_text_title}>주방 사진</h2>
+                <p className={styles.store_text_description}>
+                  청결을 1순위로 생각하기 때문에, 항상 깨끗한 주방을 유지하기
+                  위해 노력합니다.
+                </p>
+              </div>
             </div>
           </div>
           <div className={styles.store_item_wrapper}>
@@ -288,33 +395,41 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.location_inquire_container}>
+        <div id="4" className={styles.location_inquire_container}>
           <div className={styles.map_container}>
             <div className={styles.location_detail_container}>
               <div className={styles.location_detail_wrapper}>
                 <h2 className={styles.location_title_text}>오시는 길</h2>
                 <p className={styles.location_detail_text}>
                   <FaLocationDot />
-                  &nbsp;&nbsp;&nbsp; 인천광역시 부평구 부평1동 대림아파트
+                  &nbsp;&nbsp;&nbsp; 서울특별시 용산구 한강대로 405
                 </p>
                 <p className={styles.phone_detail_text}>
                   <FaPhoneAlt />
-                  &nbsp;&nbsp;&nbsp; 010-8681-7883
+                  &nbsp;&nbsp;&nbsp; 010-1234-5678
                 </p>
               </div>
             </div>
+
             <Map
-              center={{ lat: 37.580314, lng: 126.926204 }}
+              center={{ lat: 37.552998017, lng: 126.974598728 }}
               style={{ width: "100%", height: "100%" }}
             >
-              <MapMarker position={{ lat: 37.5803099, lng: 126.922669 }}>
-                <div style={{ color: "#000" }}>Hello World!</div>
+              <MapMarker position={{ lat: 37.552987017, lng: 126.972591728 }}>
+                <div
+                  style={{
+                    color: "#000",
+                    textAlign: "center",
+                  }}
+                >
+                  Dalk
+                </div>
               </MapMarker>
             </Map>
           </div>
         </div>
 
-        <section className={styles.reservation_container}>
+        {/* <section className={styles.reservation_container}>
           <div className={styles.reservation_wrapper}>
             <h3 className={styles.reservation_text}>문&nbsp;&nbsp;의</h3>
             <div className={styles.reservation_form_wrapper}>
@@ -337,19 +452,48 @@ export default function Home() {
               value="문의"
             ></input>
           </div>
-        </section>
+        </section> */}
 
-        <footer className={styles.footer_container}>
+        <footer id="5" className={styles.footer_container}>
           <div className={styles.footer_wrapper}>
-            <div className={styles.logo_wrapper}>
-              <Image />
+            <div className={styles.footer_left}>
+              <p>사업자등록번호: 123-45-67890 대표자 : 홍길동</p>
+              <p>주소: 서울특별시 용산구 한강대로 405</p>
+              <p>대표번호: 1234-5678</p>
+              <p>이메일: abc123@naver.com</p>
+            </div>
+            <div className={styles.footer_right}>
+              <span
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                Follow Us{" "}
+                <FaYoutube
+                  className={styles.icons}
+                  onClick={() =>
+                    (window.location.href = "http://www.youtube.com")
+                  }
+                />
+                <FaInstagram
+                  className={styles.icons}
+                  onClick={() =>
+                    (window.location.href = "http://www.instagram.com")
+                  }
+                />
+                <FaFacebook
+                  className={styles.icons}
+                  onClick={() =>
+                    (window.location.href = "http://www.facebook.com")
+                  }
+                />
+              </span>
+
+              <p>Copyright ©DALK CO. All rights reserved</p>
             </div>
           </div>
-          <p>
-            대표이사: 홍길동|주소: 인천광역시 부평구 부평1동|대표전화:
-            010-1234-5678
-          </p>
-          <p>Copyright Ⓒ 2023</p>
         </footer>
       </main>
     </>

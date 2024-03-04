@@ -29,12 +29,22 @@ import gallery7 from "../../public/images/11/gallery/gallery7.jpg";
 import gallery8 from "../../public/images/11/gallery/gallery8.jpg";
 import mapDetail from "../../public/images/11/map-detail/map-detail.jpg";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { Link } from "react-scroll";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init();
+  });
   const settings = {
     fade: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
@@ -60,11 +70,21 @@ export default function Home() {
               </div>
               <nav>
                 <ol className={styles.li_wrapper}>
-                  <li>소개</li>
-                  <li>메뉴</li>
-                  <li>갤러리</li>
-                  <li>오시는 길</li>
-                  <li>문의</li>
+                  <Link duration={600} to="1" spy={true} smooth={true}>
+                    <li>소개</li>
+                  </Link>
+                  <Link duration={600} to="2" spy={true} smooth={true}>
+                    <li>메뉴</li>
+                  </Link>
+                  <Link duration={600} to="3" spy={true} smooth={true}>
+                    <li>갤러리</li>
+                  </Link>
+                  <Link duration={600} to="4" spy={true} smooth={true}>
+                    <li>오시는 길</li>
+                  </Link>
+                  <Link duration={600} to="5" spy={true} smooth={true}>
+                    <li>문의</li>
+                  </Link>
                 </ol>
               </nav>
             </div>
@@ -73,9 +93,17 @@ export default function Home() {
           <Slider {...settings}>
             <div className={styles.main_banner_image_wrapper}>
               <div className={styles.main_banner_text_wrapper}>
-                <h2 className={styles.main_banner_text}>
-                  매일의 한잔, <br />더 특별한 순간을 만나다
-                </h2>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="100"
+                  data-aos-duration="600"
+                  data-aos-easing="ease-out-back"
+                  data-aos-once="true"
+                >
+                  <h2 className={styles.main_banner_text}>
+                    매일의 한잔, <br />더 특별한 순간을 만나다
+                  </h2>
+                </div>
               </div>
               <Image
                 className={styles.main_banner_image}
@@ -86,9 +114,17 @@ export default function Home() {
             </div>
             <div className={styles.main_banner_image_wrapper}>
               <div className={styles.main_banner_text_wrapper}>
-                <h2 className={styles.main_banner_text}>
-                  신선한 원두, <br />더 진한 즐거움
-                </h2>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-duration="700"
+                  data-aos-easing="ease-out-back"
+                  data-aos-once="true"
+                >
+                  <h2 className={styles.main_banner_text}>
+                    신선한 원두, <br />더 진한 즐거움
+                  </h2>
+                </div>
               </div>
               <Image
                 className={styles.main_banner_image}
@@ -100,7 +136,7 @@ export default function Home() {
           </Slider>
         </div>
 
-        <section className={styles.about_us_container}>
+        <section id="1" className={styles.about_us_container}>
           <div className={styles.about_us_wrapper}>
             <div className={styles.about_us_image_wrapper}>
               <Image
@@ -110,19 +146,43 @@ export default function Home() {
                 alt="정보이미지"
               />
             </div>
-            <h2 className={styles.about_us_title}>더 나은 커피를 위해</h2>
-            <p className={styles.about_us_description}>
-              더 나은 커피를 위해 노력하고 있어 매일 아침 신선하고 고품질의
-              원두를 선택하며, 커피 매니아들의 추천을 따라 정확한 추출 시간과
-              온도를 조절하여 완벽한 풍미를 창출합니다. 또한, 다양한 원두의
-              특징을 이해하고 브루잉 메서드를 실험하여 새로운 맛의 경험을
-              즐기며, 끊임없이 커피의 품질을 향상시키고자 노력하고 있습니다.
-            </p>
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-duration="500"
+              data-aos-easing="ease-out"
+              data-aos-once="true"
+            >
+              <h2 className={styles.about_us_title}>더 나은 커피를 위해</h2>
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-offset="270"
+              data-aos-duration="500"
+              data-aos-easing="ease-out"
+              data-aos-once="true"
+            >
+              <p className={styles.about_us_description}>
+                더 나은 커피를 위해 노력하고 있어 매일 아침 신선하고 고품질의
+                원두를 선택하며, 커피 매니아들의 추천을 따라 정확한 추출 시간과
+                온도를 조절하여 완벽한 풍미를 창출합니다. 또한, 다양한 원두의
+                특징을 이해하고 브루잉 메서드를 실험하여 새로운 맛의 경험을
+                즐기며, 끊임없이 커피의 품질을 향상시키고자 노력하고 있습니다.
+              </p>
+            </div>
           </div>
         </section>
-        <section className={styles.menu_container}>
+        <section id="2" className={styles.menu_container}>
           <div className={styles.menu_wrapper}>
-            <h2 className={styles.menu_text}>메뉴</h2>
+            <div
+              data-aos="fade-up"
+              data-aos-offset="200"
+              data-aos-duration="350"
+              data-aos-easing="ease-out"
+              data-aos-once="true"
+            >
+              <h2 className={styles.menu_text}>메뉴</h2>
+            </div>
             <div className={styles.menu_line}></div>
             <div className={styles.item_container}>
               <div className={styles.item_wrapper}>
@@ -146,7 +206,7 @@ export default function Home() {
                     alt="커피2"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
+                <div className={styles.item_name}>Moca</div>
                 <div className={styles.item_price}>5,500₩</div>
               </div>
               <div className={styles.item_wrapper}>
@@ -158,7 +218,7 @@ export default function Home() {
                     alt="커피3"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
+                <div className={styles.item_name}>Capuchino</div>
                 <div className={styles.item_price}>5,500₩</div>
               </div>
               <div className={styles.item_wrapper}>
@@ -170,7 +230,7 @@ export default function Home() {
                     alt="커피4"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
+                <div className={styles.item_name}>Cafe con leche</div>
                 <div className={styles.item_price}>5,500₩</div>
               </div>
               <div className={styles.item_wrapper}>
@@ -182,7 +242,7 @@ export default function Home() {
                     alt="커피5"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
+                <div className={styles.item_name}>El mago de Oz</div>
                 <div className={styles.item_price}>5,500₩</div>
               </div>
               <div className={styles.item_wrapper}>
@@ -194,8 +254,8 @@ export default function Home() {
                     alt="커피6"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
-                <div className={styles.item_price}>5,500₩</div>
+                <div className={styles.item_name}>Americano</div>
+                <div className={styles.item_price}>4,000₩</div>
               </div>
               <div className={styles.item_wrapper}>
                 <div className={styles.image_wrapper}>
@@ -206,7 +266,7 @@ export default function Home() {
                     alt="커피7"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
+                <div className={styles.item_name}>Cafe irlandes</div>
                 <div className={styles.item_price}>5,500₩</div>
               </div>
               <div className={styles.item_wrapper}>
@@ -218,14 +278,22 @@ export default function Home() {
                     alt="커피8"
                   />
                 </div>
-                <div className={styles.item_name}>Caramel Macchiato</div>
+                <div className={styles.item_name}>Americano de coco</div>
                 <div className={styles.item_price}>5,500₩</div>
               </div>
             </div>
           </div>
         </section>
-        <section className={styles.gallery_container}>
-          <h2 className={styles.gallery_text}>갤러리</h2>
+        <section id="3" className={styles.gallery_container}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-duration="350"
+            data-aos-easing="ease-out"
+            data-aos-once="true"
+          >
+            <h2 className={styles.gallery_text}>갤러리</h2>
+          </div>
           <div className={styles.gallery_line}></div>
           <div className={styles.gallery_wrapper}>
             <div className={styles.gallery_image_wrapper}>
@@ -294,38 +362,69 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.map_container}>
-          <h2 className={styles.map_text}>오시는 길</h2>
+        <section id="4" className={styles.map_container}>
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-duration="350"
+            data-aos-easing="ease-out"
+            data-aos-once="true"
+          >
+            <h2 className={styles.map_text}>오시는 길</h2>
+          </div>
           <div className={styles.map_line}></div>
           <div className={styles.map_wrapper}>
             <div className={styles.left_container}>
               <Map
-                center={{ lat: 37.580314, lng: 126.926204 }}
+                center={{ lat: 37.552998017, lng: 126.972548728 }}
                 style={{ width: "100%", height: "100%" }}
               >
-                <MapMarker position={{ lat: 37.5803099, lng: 126.922669 }}>
-                  <div style={{ color: "#000" }}>Hello World!</div>
+                <MapMarker position={{ lat: 37.552987017, lng: 126.972591728 }}>
+                  <div
+                    style={{
+                      color: "#000",
+                      textAlign: "center",
+                    }}
+                  >
+                    시그니처원두
+                  </div>
                 </MapMarker>
               </Map>
             </div>
             <div className={styles.right_container}>
               <div className={styles.right_wrapper}>
-                <h2 className={styles.right_title_text}>
-                  오픈 시간
-                  <br />
-                  &<br />
-                  문의
-                </h2>
-                <div className={styles.right_description_wrapper}>
-                  <div className={styles.right_time_wrapper}>
-                    <p>월요일 - 금요일 // CLOSED</p>
-                    <p>토요일 // 09:00 - 18:00</p>
-                    <p>일요일 // CLOSED</p>
-                  </div>
-                  <div className={styles.right_reservation_wrapper}>
-                    <p>카페 전화번호:</p>
-                    <p>032-123-4567</p>
-                    <p>010-1234-5678</p>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="200"
+                  data-aos-duration="500"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                >
+                  <h2 className={styles.right_title_text}>
+                    오픈 시간
+                    <br />
+                    &<br />
+                    문의
+                  </h2>
+                </div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-offset="270"
+                  data-aos-duration="500"
+                  data-aos-easing="ease-out"
+                  data-aos-once="true"
+                >
+                  <div className={styles.right_description_wrapper}>
+                    <div className={styles.right_time_wrapper}>
+                      <p>월요일 - 금요일 // CLOSED</p>
+                      <p>토요일 // 09:00 - 18:00</p>
+                      <p>일요일 // CLOSED</p>
+                    </div>
+                    <div className={styles.right_reservation_wrapper}>
+                      <p>카페 전화번호:</p>
+                      <p>032-123-4567</p>
+                      <p>010-1234-5678</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -338,54 +437,48 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.reservation_container}>
-          <div className={styles.reservation_wrapper}>
-            <h3 className={styles.reservation_text}>예약하기</h3>
-            <div className={styles.reservation_line}></div>
-            <div className={styles.reservation_form_wrapper}>
-              <div className={styles.input_wrapper}>
-                <p className={styles.input_name}>성함</p>
-                <input className={styles.name_input_form} type="text"></input>
-              </div>
-              <div className={styles.input_wrapper}>
-                <p className={styles.input_phone}>전화번호</p>
-                <input className={styles.phone_input_form} type="text"></input>
-              </div>
-              <div className={styles.input_wrapper}>
-                <p className={styles.input_count}>인원 수</p>
-                <input
-                  className={styles.count_input_form}
-                  type="number"
-                ></input>
-              </div>
-              <div className={styles.input_wrapper}>
-                <p className={styles.input_date}>예약 날짜</p>
-                <input
-                  className={styles.date_input_form}
-                  type="datetime-local"
-                ></input>
-              </div>
-            </div>
-            <input
-              className={styles.reservation_submit}
-              type="submit"
-              value="예약"
-            ></input>
-          </div>
-        </section>
       </main>
 
-      <footer className={styles.footer_container}>
+      <footer id="5" className={styles.footer_container}>
         <div className={styles.footer_wrapper}>
-          <div className={styles.logo_wrapper}>
-            <Image />
+          <div className={styles.footer_left}>
+            <p>사업자등록번호: 123-45-67890 대표자 : 홍길동</p>
+            <p>주소: 서울특별시 용산구 한강대로 405</p>
+            <p>대표번호: 1234-5678</p>
+            <p>이메일: abc123@naver.com</p>
+          </div>
+          <div className={styles.footer_right}>
+            <span
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              Follow Us{" "}
+              <FaYoutube
+                className={styles.icons}
+                onClick={() =>
+                  (window.location.href = "http://www.youtube.com")
+                }
+              />
+              <FaInstagram
+                className={styles.icons}
+                onClick={() =>
+                  (window.location.href = "http://www.instagram.com")
+                }
+              />
+              <FaFacebook
+                className={styles.icons}
+                onClick={() =>
+                  (window.location.href = "http://www.facebook.com")
+                }
+              />
+            </span>
+
+            <p>Copyright ©시그니처원두 CO. All rights reserved</p>
           </div>
         </div>
-        <p>
-          대표이사: 홍길동|주소: 인천광역시 부평구 부평1동|대표전화:
-          010-1234-5678
-        </p>
-        <p>Copyright Ⓒ 2023</p>
       </footer>
     </>
   );

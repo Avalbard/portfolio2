@@ -102,7 +102,7 @@ export default function Home() {
             <div className={styles.main_image_wrapper}>
               <div className={styles.main_text_wrapper}>
                 <h2 className={styles.main_text}>
-                  ㅇㅇPC가 여러분들에게
+                  제로PC가 여러분들에게
                   <br />
                   최고의 게임 환경을 선사합니다
                 </h2>
